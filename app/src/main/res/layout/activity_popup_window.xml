@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_dialog"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/left"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="向左"
+            android:textSize="15sp"
+            android:textColor="@color/colorAccent"
+            android:layout_height="50dp" />
+        <Button
+            android:id="@+id/up"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="向上"
+            android:textSize="15sp"
+            android:textColor="@color/colorAccent"
+            android:layout_height="50dp" />
+        <Button
+            android:id="@+id/right"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="向右"
+            android:textSize="15sp"
+            android:textColor="@color/colorAccent"
+            android:layout_height="50dp" />
+        <Button
+            android:id="@+id/down"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="向下"
+            android:textSize="15sp"
+            android:textColor="@color/colorAccent"
+            android:layout_height="50dp" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:text="------------切换目标View进行弹框---------------"
+        android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/target_1"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="目标一"
+            android:layout_height="wrap_content" />
+        <Button
+            android:id="@+id/target_2"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="目标二"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/view_target_2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="目标二View"
+            android:textSize="20dp"
+            android:gravity="center"
+            android:background="#69d472"/>
+        <TextView
+            android:id="@+id/view_target_1"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:text="目标一View"
+            android:textSize="20dp"
+            android:gravity="center"
+            android:layout_margin="80dp"
+            android:background="#a51aaf"/>
+    </FrameLayout>
+</LinearLayout>

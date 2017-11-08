@@ -1,0 +1,51 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="ImageTranslucentTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!--键盘的设置-->
+        <!--stateAlwaysHidden :当该Activity主窗口获取焦点时，软键盘也总是被隐藏的-->
+        <!--stateHidden：用户选择activity时，软键盘总是被隐藏-->
+        <!--adjustResize :该Activity总是调整屏幕的大小以便留出软键盘的空间-->
+        <item name="android:windowSoftInputMode">stateAlwaysHidden|stateHidden|adjustPan</item>
+        <!--activity切换动画-->
+        <!-- Android 4.4以上 设置statusBarColor 为透明-->
+        <item name="android:windowTranslucentNavigation" tools:targetApi="kitkat">true</item>
+        <item name="android:windowTranslucentStatus" tools:targetApi="kitkat">true</item>
+        <!-- Android 5.0以上 设置statusBarColor 为透明-->
+        <item name="android:statusBarColor" tools:targetApi="lollipop">@android:color/transparent
+        </item>
+        <item name="android:windowDrawsSystemBarBackgrounds" tools:targetApi="lollipop">true</item>
+        <!-- Android 6.0以上 状态栏字色和图标为浅黑色-->
+        <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
+    </style>
+
+    -
+
+    <style name="dialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <!--边框-->
+        <item name="android:windowIsFloating">true</item>
+        <!--是否浮现在activity之上-->
+        <item name="android:windowIsTranslucent">false</item>
+        <!--半透明-->
+        <item name="android:windowNoTitle">true</item>
+        <!--无标题-->
+        <item name="android:windowBackground">@color/white</item>
+        <!--背景颜色-->
+        <item name="android:backgroundDimEnabled">true</item>
+        <!--模糊-->
+
+    </style>
+
+    <style name="anim_dialog">
+        <item name="android:windowEnterAnimation">@anim/in_left_alpha</item>
+        <item name="android:windowExitAnimation">@anim/out_left_alpha</item>
+    </style>
+</resources>

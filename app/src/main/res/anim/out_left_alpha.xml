@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<set xmlns:android="http://schemas.android.com/apk/res/android"
+    android:duration="1000"
+    android:fillAfter="true"
+    android:startOffset="0">
+    <alpha
+        android:fromAlpha="1"
+        android:toAlpha="0" />
+    <translate
+        android:fromXDelta="0"
+        android:toXDelta="-100%"
+        android:fromYDelta="0"
+        android:toYDelta="0"/>
+    <!--%p 当前的左上角加上父控件宽度的50%做为起始点x轴坐标-->
+    <!--% 在当前控件的左上角加上自己宽度的50%做为起始点-->
+    <scale android:fromXScale="1"
+        android:fromYScale="1"
+        android:pivotX="-50%p"
+        android:pivotY="50%p"
+        android:toXScale="0"
+        android:toYScale="0"/>
+</set>
