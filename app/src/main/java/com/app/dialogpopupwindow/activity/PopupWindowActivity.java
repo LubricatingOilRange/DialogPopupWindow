@@ -29,8 +29,6 @@ public class PopupWindowActivity extends AppCompatActivity {
     Button target1;
     @BindView(R.id.target_2)
     Button target2;
-    @BindView(R.id.view_target_green)
-    TextView view_target_green;
     @BindView(R.id.view_target_red)
     TextView view_target_red;
     private Unbinder binder;
@@ -56,16 +54,16 @@ public class PopupWindowActivity extends AppCompatActivity {
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.left://左
-                PopupWindowHelper.showLeft(type == 1 ? view_target_red:view_target_green, this, commonPopupWindow);
+                PopupWindowHelper.showLeft(view_target_red, this, commonPopupWindow);
                 break;
             case R.id.up://上
-                PopupWindowHelper.showUp(type == 1 ? view_target_red:view_target_green, this, commonPopupWindow);
+                PopupWindowHelper.showUp(view_target_red, this, commonPopupWindow);
                 break;
             case R.id.right://右
-                PopupWindowHelper.showRight(type == 1 ? view_target_red:view_target_green, this, commonPopupWindow);
+                PopupWindowHelper.showRight(view_target_red, this, commonPopupWindow);
                 break;
             case R.id.down://下
-                PopupWindowHelper.showBottom(type == 1 ? view_target_red:view_target_green, this, commonPopupWindow);
+                PopupWindowHelper.showBottom(view_target_red, this, commonPopupWindow);
                 break;
             case R.id.target_1://目标一
                 type = 1;
