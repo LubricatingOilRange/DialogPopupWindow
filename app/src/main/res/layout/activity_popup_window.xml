@@ -72,7 +72,7 @@
         android:layout_height="match_parent">
 
         <TextView
-            android:id="@+id/view_target_2"
+            android:id="@+id/view_target_green"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="目标二View"
@@ -80,7 +80,7 @@
             android:gravity="center"
             android:background="#69d472"/>
         <TextView
-            android:id="@+id/view_target_1"
+            android:id="@+id/view_target_red"
             android:layout_width="match_parent"
             android:layout_height="80dp"
             android:text="目标一View"

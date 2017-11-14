@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
     public void onViewClicked(View view) {
         Intent intent;
         switch (view.getId()) {
-            case R.id.bt_dialog:
+            case R.id.bt_dialog://展示Dialog的弹框
                 DialogFragmentHelper.showDialog(manager,commonDialogFragment);
                 break;
             case R.id.bt_popupWindow:

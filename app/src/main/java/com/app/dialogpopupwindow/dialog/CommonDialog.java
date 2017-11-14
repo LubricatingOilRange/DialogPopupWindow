@@ -5,6 +5,7 @@ import android.content.Context;
 import android.view.View;
 
 import com.app.dialogpopupwindow.R;
+import com.app.dialogpopupwindow.utils.ViewUtil;
 
 /**
  * Created by ruibing.han on 2017/11/3.
@@ -135,7 +136,7 @@ public class CommonDialog extends Dialog {
         public CommonDialog create(int themeId) {
             final CommonDialog commonDialog = new CommonDialog(mDialogParam.mContext, themeId);
             mDialogParam.apply(commonDialog.mDialogController);
-            //CommonUtil.measureWidthAndHeight(commonDialog.mDialogController.mDialogView);
+            ViewUtil.measureWidthAndHeight(commonDialog.mDialogController.mDialogView);
             return commonDialog;
         }
         /**

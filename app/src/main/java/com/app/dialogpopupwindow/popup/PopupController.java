@@ -3,6 +3,7 @@ package com.app.dialogpopupwindow.popup;
 import android.app.Activity;
 import android.content.Context;
 import android.graphics.drawable.ColorDrawable;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -85,7 +86,6 @@ public class PopupController {
     private void setAnimationStyle(int animationStyle) {
         mPopupWindow.setAnimationStyle(animationStyle);
     }
-
     /**
      * 设置Outside是否可点击
      *
@@ -98,21 +98,22 @@ public class PopupController {
     }
 
     //弹框的参数
-     static class PopupParams {
-         int layoutResId;//布局id
-         Context mContext;
-         int mWidth, mHeight;//弹窗的宽和高
-         boolean isShowBg, isShowAnim;
-         float bg_level;//屏幕背景灰色程度
-         int animationStyle;//动画Id
-         View mView;
-         boolean isTouchable = true;//窗口外部是否可点击或点击消失
+    static class PopupParams {
+        Context mContext;
+        int layoutResId;//布局id
+        int mWidth, mHeight;//弹窗的宽和高
+        int animationStyle;//动画Id
+        boolean isShowBg, isShowAnim;
+        float bg_level;//屏幕背景灰色程度
+        View mView;
+        boolean isTouchable = true;//窗口外部是否可点击或点击消失
 
-         PopupParams(Context mContext) {
+
+        PopupParams(Context mContext) {
             this.mContext = mContext;
         }
 
-         void apply(PopupController controller) {
+        void apply(PopupController controller) {
             if (mView != null) {
                 controller.setView(mView);
             } else if (layoutResId != 0) {

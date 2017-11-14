@@ -4,6 +4,8 @@ import android.content.Context;
 import android.view.View;
 import android.widget.PopupWindow;
 
+import com.app.dialogpopupwindow.utils.ViewUtil;
+
 /**
  * Created by 神马都是浮云 on 2017-10-29.
  */
@@ -43,36 +45,67 @@ public class CommonPopupWindow extends PopupWindow {
         mPopupController.setBackGroundLevel(1.0f);// 恢复透明度
     }
 
+    //--------------------------------popupWindow的显示位置---------------------------------------
+
     /**
-     * 展示在某个空的下面--中间
+     * 默认显示parent的位置Gravity.CENTER
      * @param parent
      * @param gravity
-     * @param x
-     * @param y
+     * @return
      */
-    private int[] location = new int[2] ;
-    private int h;//parent在window上的高度
-    public PopupWindow showAtBottomCenter(View parent, int gravity) {
-
-        parent.getLocationInWindow(location);
-        parent.measure(0, 0);
-        h = parent.getMeasuredHeight();
-        this.showAtLocation(parent, gravity, location[0], location[1] + h);
-        return this;
-    }
     public PopupWindow showNormal(View parent, int gravity) {
-        this.showAtLocation(parent, gravity, 0, 0);
+        this.showAtLocation(parent, gravity,0,0);
         return this;
     }
 
-    public interface ViewInterface {
-        void getChildView(View view, int layoutResId);
+    /**
+     * 默认显示parent的位置Gravity.CENTER
+     * @param parent
+     * @param gravity
+     * @return
+     */
+    public PopupWindow showLeft(View parent, int gravity) {
+        this.showAtLocation(parent, gravity,0,0);
+        return this;
     }
 
+    /**
+     * 默认显示parent的位置Gravity.CENTER
+     * @param parent
+     * @param gravity
+     * @return
+     */
+    public PopupWindow showUp(View parent, int gravity) {
+        this.showAtLocation(parent, gravity,0,0);
+        return this;
+    }
+
+    /**
+     * 默认显示parent的位置Gravity.CENTER
+     * @param parent
+     * @param gravity
+     * @return
+     */
+    public PopupWindow showRight(View parent, int gravity) {
+        this.showAtLocation(parent, gravity,0,0);
+        return this;
+    }
+    /**
+     * 展示在目标parent的左下方
+     * @param parent
+     * @param gravity
+     * @return
+     */
+    public PopupWindow showBottom(View parent, int gravity) {
+//        int[] viewLocation = ViewUtil.getViewLocation(parent);
+//        int[] viewWH = ViewUtil.getViewWH(parent);
+        this.showAtLocation(parent, gravity, 0,0);
+        return this;
+    }
     //仿AlertDialog中的Builder
     public static class Builder {
         private final PopupController.PopupParams param;
-        private ViewInterface listener;
+
 
         public Builder(Context context) {
             this.param = new PopupController.PopupParams(context);
@@ -95,17 +128,6 @@ public class CommonPopupWindow extends PopupWindow {
         public Builder setView(View view) {
             param.mView = view;
             param.layoutResId = 0;
-            return this;
-        }
-
-        /**
-         * 设置子View点击事件监听
-         *
-         * @param listener ViewInterface
-         * @return Builder
-         */
-        public Builder setViewOnclickListener(ViewInterface listener) {
-            this.listener = listener;
             return this;
         }
 
@@ -162,10 +184,7 @@ public class CommonPopupWindow extends PopupWindow {
         public CommonPopupWindow create() {
             final CommonPopupWindow popupWindow = new CommonPopupWindow(param.mContext);
             param.apply(popupWindow.mPopupController);
-            if (listener != null && param.layoutResId != 0) {
-                listener.getChildView(popupWindow.mPopupController.mPopupView, param.layoutResId);
-            }
-            CommonUtil.measureWidthAndHeight(popupWindow.mPopupController.mPopupView);
+            ViewUtil.measureWidthAndHeight(popupWindow.mPopupController.mPopupView);
             return popupWindow;
         }
     }

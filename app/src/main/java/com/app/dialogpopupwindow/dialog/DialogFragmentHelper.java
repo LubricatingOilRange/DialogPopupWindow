@@ -31,7 +31,7 @@ public class DialogFragmentHelper {
 //                            .setXAndY(-100, 300)//设置dialog坐标点(基于Gravity之后的偏移量，默认为中心点)
                             .setXAndY(0, 0)//设置dialog坐标点(基于Gravity之后的偏移量，默认为中心点)
                             .setOutsideTouchable(true)//设置dialog外部点击是否消失
-                            .setAnimationStyle(R.style.anim_dialog)//设置dialog显示消失动画
+                           // .setAnimationStyle(R.style.anim_dialog)//设置dialog显示消失动画
                             .setGravity(Gravity.CENTER)//设置显示在activity的左边
                             .setView(R.layout.layout_window, new CommonDialogFragment.OnHandleViewCallBack() {
                                 @Override
