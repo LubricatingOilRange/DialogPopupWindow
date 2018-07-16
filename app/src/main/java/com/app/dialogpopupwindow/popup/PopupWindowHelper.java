@@ -52,7 +52,7 @@ public class PopupWindowHelper {
         commonPopupWindow.showLeft(parent, Gravity.LEFT);//设置显示在parent的左边
     }
 
-    /**
+    /*
      *展示在parent的左方
      * @param parent
      * @param context
