@@ -34,8 +34,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         binder = ButterKnife.bind(this);
         manager = getSupportFragmentManager();
-        Toast.makeText(MainActivity.this,"aaaa",Toast.LENGTH_SHORT).show();
-        Toast.makeText(MainActivity.this,"bbbb",Toast.LENGTH_SHORT).show();
+        Toast.makeText(MainActivity.this,"dddd",Toast.LENGTH_SHORT).show();
+        Toast.makeText(MainActivity.this,"ffff",Toast.LENGTH_SHORT).show();
     }
 
     @Override
