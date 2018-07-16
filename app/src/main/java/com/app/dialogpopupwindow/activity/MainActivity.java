@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.PopupWindow;
+import android.widget.Toast;
 
 import com.app.dialogpopupwindow.R;
 import com.app.dialogpopupwindow.dialog.CommonDialogFragment;
@@ -33,6 +34,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         binder = ButterKnife.bind(this);
         manager = getSupportFragmentManager();
+        Toast.makeText(MainActivity.this,"a",Toast.LENGTH_SHORT).show();
+        Toast.makeText(MainActivity.this,"b",Toast.LENGTH_SHORT).show();
     }
 
     @Override
